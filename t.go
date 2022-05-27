@@ -15,7 +15,7 @@ type Message struct {
 
 func main() {
 	var args = os.Args[1:]
-	var fulltext = strings.Join(args, "")
+	var fulltext = strings.Join(args, " ")
 
 	postJSON(makeThink(fulltext))
 }
