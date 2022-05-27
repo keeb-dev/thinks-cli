@@ -14,6 +14,7 @@ type Message struct {
 }
 
 func main() {
+	// todo: replace with evans thing https://discord.com/channels/976812245843583006/976812246376280087/979554599318982718
 	var args = os.Args[1:]
 	var fulltext = strings.Join(args, " ")
 
@@ -21,6 +22,7 @@ func main() {
 }
 
 func postJSON(message []byte) {
+	// todo: need to externalize this
 	url := "http://devil:5000/api/think"
 
 	request, error := http.NewRequest("POST", url, bytes.NewBuffer(message))
@@ -42,6 +44,7 @@ func postJSON(message []byte) {
 }
 
 func makeThink(msg string) []byte {
+	// todo: consider stripping some of the text here and ensuring it is not blank
 	message := &Message{Text: msg}
 
 	b, err := json.Marshal(message)
